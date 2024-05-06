@@ -1,5 +1,9 @@
 ---
-
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {title ="My Astro blog", description ="Am training on it"} = Astro.props as Props;
 ---
 
 <html lang="en">
@@ -8,7 +12,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>About</title>
+    <meta name="descrition" content={description} />
+    <title>{title}</title>
   </head>
   <body>
     <slot> Default content </slot>
