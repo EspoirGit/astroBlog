@@ -1,21 +1,19 @@
 ---
+import "../Styles/global.css"
+import Mainhead from "./Mainhead.astro";
+
 interface Props {
   title?: string;
   description?: string;
 }
+
 const {title ="My Astro blog", description ="Am training on it"} = Astro.props as Props;
+
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="descrition" content={description} />
-    <title>{title}</title>
-  </head>
+  <Mainhead {title} {description} />
   <body>
-    <slot> Default content </slot>
+    <slot> Default text </slot>
   </body>
 </html>
